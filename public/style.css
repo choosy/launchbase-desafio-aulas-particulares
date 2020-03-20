@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+
+:root {
+  --primary-color: #607d8b;
+  --dark-primary-color: #455a64;
+  --light-primary-color: #cfd8dc;
+  --accent-color: #CDDC39;
+  --primary-text: #212121;
+  --secondary-text: #757575;
+  --divider-color: #bdbdbd;
+  --text-icon-color: #ffffff;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+body {
+  background-color: var(--primary-color);
+  font-family: 'Roboto', sans-serif;
+}
+
+header {
+  background-color: var(--light-primary-color);
+  padding: 32px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.links a {
+  font-size: 22px;
+  text-decoration: none;
+  color: var(--primary-text);
+  position: relative;
+}
+
+.links a.active {
+  font-weight: bold;
+}
+
+.links a + a {
+  margin-left: 32px;
+}
+
+.links a:hover {
+  font-weight: 700;
+}
+
+.links a::after {
+  content: "";
+  width: 0; /* importante comecar do 0 */
+  height: 3px;
+  background-color: var(--text-icon-color);
+  position: absolute; /* em relacao ao elemento pai (a) */
+  left: 0;
+  bottom: -4px;
+
+}
+
+.links a:hover::after {
+  width: 100%; /* ir para o 100% */
+  transition: width 400ms ease-out;
+}
+
+/* CARD */
+.card {
+  background-color: var(--text-icon-color);
+  width: 800px;
+  min-height: 400px ;
+  margin: 45px auto;
+  
+  /* GRID */
+  display: grid;
+  grid-template-columns: 40% 60%;
+  
+  /* SHADOW */
+  box-shadow: 2px 2px 6px -2px rgba(0,0,0,0.2);
+  
+  /* ANIMATION */
+  animation: up 200ms ease-out;
+}
+
+@keyframes up {
+  from {
+    opacity: 0;
+    transform: translateY(15px) 
+  }
+  
+  to {
+    opacity: 1;  
+  }
+}
+
+.avatar {
+  background: url(https://source.unsplash.com/collection/1684637/800x800) no-repeat center center / cover;
+}
+
+/* DETAILS */
+.details {
+  padding: 32px;
+}
+
+.details .item {
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+  padding: 16px 0;
+}
+
+.details .item:last-child {
+  border: none;
+}
+
+.details h3,
+.details .item div:nth-child(1) {
+  color: var(--divider-color);
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.7px;
+}
+
+.details .item div:nth-child(2) {
+  color: var(--primary-text);
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.details h3 {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--accent-color);
+}
+
+.details .item span {
+  padding: 8px 16px;
+  background-color: var(--accent-color);
+  border-radius: 16px;
+  margin-top: 4px;
+  margin-top: 8px;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+/* FORM */
+input {
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+input::placeholder,
+input[type="date"],
+select[type="select"] {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+input[type="radio"] {
+  width: initial;
+  margin-right: 5px;
+}
+
+button[type="submit"],
+.button {
+  padding: 8px 16px;
+  background-color: var(--accent-color);
+  border-radius: 4px;
+  font-weight: bold;
+  margin-top: 32px;
+  font-size: 16px;
+  text-transform: uppercase;
+  width: 100%;
+  display: block;
+  cursor: pointer;
+}
+
+a.button {
+  text-decoration: none;
+  box-sizing: border-box;
+  color: var(--primary-text);
+  text-align: center;
+}
+
+#form-delete button[type="submit"] {
+  margin-top: 8px;
+  background-color: coral;
+}
+
+/* INDEX TEACHERS */
+.table-container {
+  display: block; /*take the grid out*/
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.table-container table {
+  border-spacing: 0;
+  width: 100%;
+}
+
+.table-container thead tr th {
+  text-transform: uppercase;
+  color: #777;
+  font-size: 14px;
+}
+
+.table-container > a {
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+td, th {
+  padding: 16px;
+  border-bottom: 1px solid var(--divider-color);
+  text-align: center;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr td:first-child {
+  display: grid;
+  grid-template-columns: 48px 1fr; 
+  align-items: center;
+}
+
+tbody tr td:first-child span {
+  width: 40px;
+  height: 40px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+  box-shadow: 3px 1px 6px -4px black;
+  border: 2px solid white;
+}
+
+tbody tr td:last-child a, .table-container > a {
+  background-color: var(--accent-color);
+  padding: 8px 16px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--dark-primary-color);
+  font-size: 12px;
+  border-radius: 4px;
+}

@@ -1,0 +1,42 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+<div class="card">
+  <section class="avatar"></section>
+
+  <section class="details">
+<form  method="POST" action="/teachers?_method=PUT">
+
+
+  <h3>Editar Professor</h3>
+
+  {% include "teachers/fields.njk" %}
+
+  <input type="hidden" name="id" value={{ teacher.id }}>
+
+
+</form>
+<form id="form-delete" method="post" action="/teachers?_method=DELETE">
+  <input type="hidden" name="id" value={{ teacher.id }}>
+  <button type="submit">Deletar</button>
+</form>
+
+<script>
+const formDelete = document.querySelector("#form-delete")
+formDelete.addEventListener("submit", function(event) {
+  const confirmation = confirm("Deseja deletar?")
+
+  if(!confirmation) {
+    event.preventDefault
+  }
+})
+</script>
+
+  </section>
+  
+</form>
+
+</div>
+
+{% endblock content %}

@@ -1,0 +1,15 @@
+{
+  "teachers": [
+    {
+      "id": 7,
+      "avatar_url": "https://images.unsplash.com/photo-1518463892881-d587bf2c296a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
+      "name": "Amanda",
+      "birth": 883612800000,
+      "scholarity": "high_school",
+      "class_type": "online",
+      "services": "Línguas",
+      "created_at": 1584383464476
+    }
+  ],
+  "students": []
+}

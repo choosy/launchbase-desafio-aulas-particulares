@@ -1,0 +1,39 @@
+<div class="item">
+    <div>Avatar</div>
+    <input type="url" name="avatar_url" placeholder="http://" value="{{ student.avatar_url }}">
+  </div>
+
+  <div class="item">
+    <div>Nome Completo</div>
+    <input type="text" name="name" value="{{ student.name }}">
+  </div>
+
+  <div class="item">
+    <div>Email</div>
+    <input type="email" name="email" placeholder="exemplo@gmail.com" value="{{ student.email }}">
+  </div>
+
+  <div class="item">
+    <div>Data de Nascimento</div>
+    <input type="date" name="birth" value="{{ student.birth }}">
+  </div>
+
+  <div class="item">
+    <div>Ano Escolar</div>
+    <select type="select" name="school_year">
+      {% for key,value in options %}
+      {% if key == student.school_year %} 
+      <option value="{{ key }}" selected>{{ value }}</option>
+      {% else %}
+      <option value="{{ key }}">{{ value }}</option>
+      {%endif%}
+      {% endfor %}
+    </select>
+  </div>
+
+  <div class="item">
+    <div>Carga Horária Semanal</div>
+    <input type="number" name="total_hours" value="{{ student.total_hours }}">
+  </div>
+  
+  <button type="submit">Salvar</button>
